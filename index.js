@@ -8,7 +8,15 @@
  * ======================================================================== */
 
 
-+function ($) {
++function(factory) {
+
+  // Establish the root object, `window` (`self`) in the browser, or `global` on the server.
+  // We use `self` instead of `window` for `WebWorker` support.
+  if (typeof exports !== 'undefined') {
+    module.exports = factory;
+  }
+
+}(function ($) {
   'use strict';
 
   // TOOLTIP PUBLIC CLASS DEFINITION
@@ -396,4 +404,4 @@
     return this
   }
 
-}(require('jquery'));
+});
